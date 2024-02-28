@@ -1,0 +1,5 @@
+# Changing object type of Packed_Cell_Volume,White_Blood_Cell_Count and Red_Blood_Cell_Count to numerical type
+
+df['Packed_Cell_Volume'] = pd.to_numeric(df['Packed_Cell_Volume'], errors='coerce')
+df['White_Blood_Cell_Count'] = pd.to_numeric(df['White_Blood_Cell_Count'], errors='coerce')
+df['Red_Blood_Cell_Count'] = pd.to_numeric(df['Red_Blood_Cell_Count'], errors='coerce')

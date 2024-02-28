@@ -1,0 +1,33 @@
+# Data Preprocessing
+
+df.isna().sum().sort_values(ascending = False)
+
+df[num_cols].isnull().sum()
+
+df[cat_cols].isnull().sum()
+
+# For filling null values, we will use two methods, random sampling for higher null values and mean/mode sampling for lower null values
+def random_value_imputation(feature):
+    random_sample = df[feature].dropna().sample(df[feature].isna().sum())
+    random_sample.index = df[df[feature].isnull()].index
+    df.loc[df[feature].isnull(), feature] = random_sample
+
+def impute_mode(feature):
+    mode = df[feature].mode()[0]
+    df[feature] = df[feature].fillna(mode)
+
+# Filling num_cols null values using random sampling method
+for col in num_cols:
+    random_value_imputation(col)
+
+df[num_cols].isnull().sum()
+
+# Filling "Red_Blood_Cells" and "Pus_Cell" using random sampling method and rest of cat_cols using mode imputation
+random_value_imputation('Red_Blood_Cells')
+random_value_imputation('Pus_Cell')
+
+for col in cat_cols:
+    impute_mode(col)
+
+df[cat_cols].isnull().sum()
+

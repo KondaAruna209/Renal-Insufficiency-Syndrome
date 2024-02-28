@@ -1,0 +1,3 @@
+# rename column names to make it more user-friendly
+
+df.columns = ['Age', 'Blood_Pressure', 'Specific_Gravity', 'Albumin', 'Sugar', 'Red_Blood_Cells', 'Pus_Cell','Pus_Cell_Clumps', 'Bacteria', 'Blood_Glucose_Random', 'Blood_Urea', 'Serum_Creatinine', 'Sodium','Potassium', 'Haemoglobin', 'Packed_Cell_Volume', 'White_Blood_Cell_Count', 'Red_Blood_Cell_Count','Hypertension', 'Diabetes_mellitus', 'Coronary_Artery_Disease', 'Appetite', 'Peda_Edema','Aanemia', 'Class']

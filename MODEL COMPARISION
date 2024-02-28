@@ -1,0 +1,8 @@
+models = pd.DataFrame({
+    'Model' : [ 'KNN', 'Decision Tree Classifier'],
+    'Score' : [knn_acc, dtc_acc]
+    })
+models.sort_values(by = 'Score', ascending = False)
+
+px.bar(data_frame = models, x = 'Score', y = 'Model', color = 'Score', template = 'plotly_dark',
+       title = 'Models Comparison')

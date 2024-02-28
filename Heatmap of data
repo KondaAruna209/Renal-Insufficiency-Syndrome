@@ -1,0 +1,5 @@
+# Heatmap of data
+
+plt.figure(figsize = (15, 8))
+sns.heatmap(df.corr(), annot = True, linewidths = 2, linecolor = 'lightgrey')
+plt.show()

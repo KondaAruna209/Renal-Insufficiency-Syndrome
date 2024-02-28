@@ -1,0 +1,4 @@
+# Unique values in categorical columns
+
+for col in cat_cols:
+    print(f"{col} has {df[col].unique()} values\n")

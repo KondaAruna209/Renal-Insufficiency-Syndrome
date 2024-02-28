@@ -1,0 +1,13 @@
+# Replacing incorrect values
+
+df['Diabetes_mellitus'].replace(to_replace = {'\tno':'no','\tyes':'yes',' yes':'yes'},inplace=True)
+df['Coronary_Artery_Disease'] = df['Coronary_Artery_Disease'].replace(to_replace = '\tno', value='no')
+df['Class'] = df['Class'].replace(to_replace = {'ckd\t': 'ckd', 'notckd': 'not ckd'})
+
+df['Class'] = df['Class'].map({'ckd': 0, 'not ckd': 1})
+df['Class'] = pd.to_numeric(df['Class'], errors='coerce')
+
+cols = ['Diabetes_mellitus', 'Coronary_Artery_Disease', 'Class']
+
+for col in cols:
+    print(f"{col} has {df[col].unique()} values\n")

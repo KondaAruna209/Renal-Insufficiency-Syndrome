@@ -1,0 +1,11 @@
+from sklearn.neighbors import KNeighborsClassifier
+from sklearn.metrics import accuracy_score, confusion_matrix, classification_report
+knn = KNeighborsClassifier()
+knn.fit(X_train, y_train)
+
+# accuracy score, confusion matrix and classification report of knn
+knn_acc = accuracy_score(y_test, knn.predict(X_test))
+print(f"Training Accuracy of KNN is {accuracy_score(y_train, knn.predict(X_train))}")
+print(f"Test Accuracy of KNN is {knn_acc} \n")
+print(f"Confusion Matrix :- \n{confusion_matrix(y_test, knn.predict(X_test))}\n")
+print(f"Classification Report :- \n {classification_report(y_test, knn.predict(X_test))}")

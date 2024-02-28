@@ -1,0 +1,15 @@
+# Categorical columns chart
+
+plt.figure(figsize = (20, 15))
+plotnumber = 1
+
+for column in cat_cols:
+    if plotnumber <= 11:
+        ax = plt.subplot(3, 4, plotnumber)
+        sns.countplot(df[column], palette = 'rocket')
+        plt.xlabel(column)
+
+    plotnumber += 1
+
+plt.tight_layout()
+plt.show()

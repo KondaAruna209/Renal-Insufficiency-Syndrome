@@ -1,0 +1,10 @@
+for col in cat_cols:
+    print(f"{col} has {df[col].nunique()} categories\n")
+
+# As all of the categorical columns have 2 categories we can use label encoder
+from sklearn.preprocessing import LabelEncoder
+le = LabelEncoder()
+for col in cat_cols:
+    df[col] = le.fit_transform(df[col])
+
+df.head()

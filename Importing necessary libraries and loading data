@@ -15,3 +15,9 @@ pd.set_option('display.max_columns', 26)
 # loading data
 df= pd.read_csv('../input/ckdisease/kidney_disease.csv')
 df.head()
+df.shape
+df.tail()
+
+# dropping id column
+df.drop('id', axis = 1, inplace = True)
+

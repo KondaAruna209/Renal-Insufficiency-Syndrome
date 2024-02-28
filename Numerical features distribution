@@ -1,0 +1,15 @@
+# Numerical features distribution
+
+plt.figure(figsize = (20, 15))
+plotnumber = 1
+
+for column in num_cols:
+    if plotnumber <= 14:
+        ax = plt.subplot(3, 5, plotnumber)
+        sns.distplot(df[column])
+        plt.xlabel(column)
+
+    plotnumber += 1
+
+plt.tight_layout()
+plt.show()
